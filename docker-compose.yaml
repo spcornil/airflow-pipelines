@@ -274,5 +274,11 @@ services:
       airflow-init:
         condition: service_completed_successfully
 
+  events_api:
+    build: ./user-events
+    image: manning-airflow/events-api
+    ports:
+      - "5000:5000"
+
 volumes:
   postgres-db-volume:
